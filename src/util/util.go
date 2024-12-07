@@ -1,16 +1,16 @@
 package util
 
 import (
-	"fmt"
 	"crypto/sha256"
+	"fmt"
 	"regexp"
 )
 
-func MakeUserPassHash(username string, password string) string {
-	to_hash := []byte(username+"_"+password)
-	idx:= sha256.Sum256(to_hash)
+func MakePassHash(password string) string {
+	to_hash := []byte("salty"+password)
+	idx := sha256.Sum256(to_hash)
 
-	hashString := fmt.Sprintf("%x",idx)
+	hashString := fmt.Sprintf("%x", idx)
 	return hashString
 }
 

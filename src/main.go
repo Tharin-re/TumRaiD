@@ -14,7 +14,7 @@ func init() {
 }
 
 func main() {
-    username := "testUser1@X"
+    username := "testUser1_X"
     pass := "testTESTtest"
     if !util.ContainUnacceptableChar(username) && !util.ContainUnacceptableChar(pass) {
         err := script.RegisterUserPass(username, pass, context.Background())

@@ -4,3 +4,10 @@ database:
   User : "postgres"
   Password : "00aa11BB22"
   Dbname : "postgres"
+settings:
+  KickOnDupedLogin : true
+  SessionLength : 60
+db_directories :
+  Schema : "tumraid"
+  User_Pass : "user_pass"
+  Current_Session : "current_session"
