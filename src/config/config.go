@@ -14,6 +14,13 @@ type Config struct {
         Password string
         Dbname   string
     }
+    UserPassConstraints struct {
+        UserLengthMin int
+        UserLengthMax int
+        PasswordLengthMin int
+        PasswordLengthMax int
+        IllegalChar string
+    }
 }
 
 var Cfg Config

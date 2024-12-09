@@ -11,3 +11,9 @@ db_directories :
   Schema : "tumraid"
   User_Pass : "user_pass"
   Current_Session : "current_session"
+userPassConstraints :
+  userLengthMin : 8
+  userLengthMax : 16
+  passwordLengthMin : 8
+  passwordLengthMax : 16
+  illegalChar : '[^a-zA-Z0-9_-]'

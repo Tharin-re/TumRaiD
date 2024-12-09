@@ -1,4 +1,4 @@
-package script
+package queries
 
 import (
 	"context"
@@ -26,7 +26,7 @@ func GetCurrentDatabase(ctx context.Context) (string, error) {
 	return currentDatabase, nil
 }
 
-func CheckDupUserPass(username string, password string, ctx context.Context) (bool, error) {
+func CheckDupUser(username string, ctx context.Context) (bool, error) {
 	fmt.Printf("Checking duplicate for %s\n", username)
 	checkDupQuery := `SELECT username FROM tumraid.user_pass WHERE username = $1;`
 	rows, err := Pool.Query(ctx, checkDupQuery, username)
@@ -37,10 +37,10 @@ func CheckDupUserPass(username string, password string, ctx context.Context) (bo
 	defer rows.Close()
 
 	if !rows.Next() {
-		return true, nil
+		return false, nil
 	}
 
-	return false, nil
+	return true, nil
 }
 
 func RegisterUserPass(username string, password string, ctx context.Context) error {

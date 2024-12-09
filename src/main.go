@@ -1,30 +1,31 @@
 package main
 
 import (
-    "context"
-    "fmt"
-    "github.com/Tharin-re/TumRaiD/src/config"
-    "github.com/Tharin-re/TumRaiD/src/script"
-    "github.com/Tharin-re/TumRaiD/src/util"
+	// "context"
+	// "fmt"
+	"github.com/Tharin-re/TumRaiD/src/config"
+	"github.com/Tharin-re/TumRaiD/src/queries"
+	// "github.com/Tharin-re/TumRaiD/src/util"
+    "github.com/Tharin-re/TumRaiD/src/service"
+	"github.com/gin-gonic/gin"
 )
 
 func init() {
-    config.LoadConfig()
-    script.InitDB()
+	config.LoadConfig()
+	queries.InitDB()
 }
 
 func main() {
-    username := "testUser1_X"
-    pass := "testTESTtest"
-    if !util.ContainUnacceptableChar(username) && !util.ContainUnacceptableChar(pass) {
-        err := script.RegisterUserPass(username, pass, context.Background())
-        if err != nil {
-            fmt.Println("Error:", err)
-        }    
-    } else {
-        fmt.Println("contain unacceptable char")
+    engine := gin.Default()
+
+    userRoute := engine.Group("/user")
+    {
+        userRoute.POST("/register", service.RegisterUserPassEndpoint)
+        // body {
+        //     "username"
+        //     "password"
+        // }
     }
-	// script.GetCurrentDatabase(context.Background())
+
+    engine.Run(":8080")
 }
-
-
