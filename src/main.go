@@ -22,8 +22,14 @@ func main() {
     {
         userRoute.POST("/register", service.RegisterUserPassEndpoint)
         // body {
-        //     "username"
-        //     "password"
+        //     Username string
+	    //     Password string
+        // }
+        userRoute.POST("/login",service.LoginUserPassOrJWTEndPoint)
+        // body {
+        //     Username string
+        //     Password string
+        //     Token string
         // }
     }
 

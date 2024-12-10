@@ -21,6 +21,10 @@ type Config struct {
         PasswordLengthMax int
         IllegalChar string
     }
+    JWT struct {
+        JWTSecretKey string
+        ExpirationTime int
+    }
 }
 
 var Cfg Config

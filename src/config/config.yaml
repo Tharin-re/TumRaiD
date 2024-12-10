@@ -17,3 +17,6 @@ userPassConstraints :
   passwordLengthMin : 8
   passwordLengthMax : 16
   illegalChar : '[^a-zA-Z0-9_-]'
+jwt :
+  JwtSecretKey : 'pine-shoes-block-bed-still'
+  ExpirationTime : 15
