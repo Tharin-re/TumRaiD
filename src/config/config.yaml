@@ -1,0 +1,22 @@
+database:
+  Host : "localhost"
+  Port : "54320"
+  User : "postgres"
+  Password : "00aa11BB22"
+  Dbname : "postgres"
+settings:
+  KickOnDupedLogin : true
+  SessionLength : 60
+db_directories :
+  Schema : "tumraid"
+  User_Pass : "user_pass"
+  Current_Session : "current_session"
+userPassConstraints :
+  userLengthMin : 8
+  userLengthMax : 16
+  passwordLengthMin : 8
+  passwordLengthMax : 16
+  illegalChar : '[^a-zA-Z0-9_-]'
+jwt :
+  JwtSecretKey : 'pine-shoes-block-bed-still'
+  ExpirationTime : 15
