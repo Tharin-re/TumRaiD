@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_disable_merge_on_stockmove_disable_merge_on_stockmove,disable_merge_on_stockmove.disable_merge_on_stockmove,model_disable_merge_on_stockmove_disable_merge_on_stockmove,base.group_user,1,1,1,1
